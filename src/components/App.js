@@ -3,29 +3,22 @@ import './css/App.css';
 import * as generator from './deckGenerator/deckGeneratorFunction';
 import Card from './card/card';
 
+let deck = generator.generate();
+
 function App() {
-
-  let deck = generator.generate();
-
-  let currentDeck = Array.from(deck); //Creates new deck from the initial deck
-  currentDeck = currentDeck[Symbol.iterator](); //Creates iterator for copied deck
-  currentDeck.next();
-
-  let [card, setCard] = useState(currentDeck.next().value);
-  let counter = 1;
+  
+  let [index, setIndex] = useState(0);
+  let [card, setCard] = useState(deck[index]);
 
   function nextCard() {
-    console.log(counter, ':', card);
-    setCard(currentDeck.next().value);
-    counter = counter + 1;
+    setIndex(index + 1);
+    setCard(deck[index]);
+    console.log(deck[index]);
   }
 
-
   function restart(){
-    currentDeck = Array.from(deck); //Creates new deck from the initial deck
-    currentDeck = currentDeck[Symbol.iterator](); //Creates iterator for copied deck
-    currentDeck.next();
-    setCard(currentDeck.next().value);
+    setIndex(0);
+    setCard(deck[0]);
   }
 
   return (
