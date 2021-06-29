@@ -11,9 +11,10 @@ function App() {
   let [card, setCard] = useState(deck[index]);
 
   function nextCard() {
-    setIndex(index + 1);
-    setCard(deck[index]);
-    console.log(deck[index]);
+    let nextIndex = index + 1;
+    console.log(deck[index]);    //Displays current card
+    setIndex(nextIndex);
+    setCard(deck[nextIndex]);
   }
 
   function restart(){
