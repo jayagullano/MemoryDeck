@@ -1,31 +1,19 @@
 import React from 'react';
 import {
     Card,
-    CardActionArea,
     CardMedia,
-    CardContent,
-    Typography,
     makeStyles,
-    Button
 } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     Card: {
-        maxWidth: 193,
-        maxHeight: 300,
-        borderRadius: '7%'
+        maxWidth: 192,
+        maxHeight: 298,
+        borderRadius: '6%'
     },
     media: {
         height: 300,
     },
-    text1: {
-        fontFamily: 'Georgia, serif',
-        variant: 'h2'
-    },
-    text2: {
-        fontFamily: 'TimesNewRoman, serif',
-        variant: 'h7'
-    }
 }));
 
 function PlayingCard(props){
@@ -38,14 +26,12 @@ function PlayingCard(props){
         
         <div>
             <Card className={classes.Card} >
-            <CardActionArea>
                 <CardMedia
                     className={classes.media}
                     component="img"
                     image={props.image}
                 />
-            </CardActionArea>
-        </Card>
+            </Card>
         </div>
     );
 }
