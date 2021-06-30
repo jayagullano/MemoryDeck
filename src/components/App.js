@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/App.css';
 import * as generator from './deckGenerator/deckGeneratorFunction';
-import Card from './card/card';
+import Card from './card/playingCard';
 
 let deck = generator.generate();
 
@@ -11,10 +11,13 @@ function App() {
   let [card, setCard] = useState(deck[index]);
 
   function nextCard() {
-    let nextIndex = index + 1;
-    console.log(deck[index]);    //Displays current card
-    setIndex(nextIndex);
-    setCard(deck[nextIndex]);
+
+    if(index < (deck.length-1)){ //Stops incrementing index after last card
+      let nextIndex = index + 1;
+      console.log(deck[index]);    //Displays current card
+      setIndex(nextIndex);
+      setCard(deck[nextIndex]);
+    }
   }
 
   function restart(){
@@ -24,15 +27,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+
+      <div className="App-header">
+        <h2>{'Card : ' + (index+1)}</h2>
       <div>
-        <Card suit={card[1]} number={card[0]}/>
+        <Card suit={card[0]} number={card[1]} image={card[2]}/>
       </div>
       <br></br>
       <button onClick={nextCard}>Next Card</button>
       <br></br>
       <button onClick={restart}>Restart</button>
-      </header>
+      </div>
     </div>
   );
 }
