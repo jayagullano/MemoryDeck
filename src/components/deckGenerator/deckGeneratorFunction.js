@@ -70,4 +70,4 @@ function generate(){
 }
 
 
-export {generate};
+export { generate };

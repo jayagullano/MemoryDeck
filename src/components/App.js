@@ -14,11 +14,11 @@ function App() {
   function chooseMode(mode) {
     switch(mode){
       case 1:
-        setMode(1); break;
+        setMode(1); break;    //Memorization Mode
       case 2:
-        setMode(2); break;
+        setMode(2); break;    //Test Mode
       default:
-        setMode(0); break;
+        setMode(0); break;    //Default Mode
     }
   }
 
@@ -28,6 +28,7 @@ function App() {
 
       {(mode === 1) ? <MemorizationMode deck={deck} /> : ''}
       {(mode === 2) ? <TestMode deck={deck} /> : ''}
+      
     </div>
   );
 }

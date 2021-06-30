@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import Card from '../card/playingCard';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
         fontSize: `calc(10px + 2vmin)`,
         color: 'white',
       },
+      NumberSelect: {
+        background: '#0000',
+      }
 }));
 
 function TestMode(props) {
@@ -36,11 +39,6 @@ function TestMode(props) {
     }
   }
 
-  function restart(){
-    setIndex(0);
-    setCard(props.deck[0]);
-  }
-
   return (
     <div className={classes.App}>
       'Test Mode' {/*Temporary Display*/}
@@ -53,8 +51,46 @@ function TestMode(props) {
         <br></br>
 
         <div>
-            <button onClick={nextCard} padding='5px'>Next Card</button>
-            <button onClick={restart}>Restart</button>
+          <FormControl className={classes.formControl}>
+            <InputLabel>Candidate</InputLabel>
+            <Select
+              value={'age'}
+              onChange={() => alert('hey')}
+              className={classes.NumberSelect}
+            >
+              <MenuItem value={1}>Ace</MenuItem>
+              <MenuItem value={2}>Two</MenuItem>
+              <MenuItem value={3}>Three</MenuItem>
+              <MenuItem value={4}>Four</MenuItem>
+              <MenuItem value={5}>Five</MenuItem>
+              <MenuItem value={6}>Six</MenuItem>
+              <MenuItem value={7}>Seven</MenuItem>
+              <MenuItem value={8}>Eight</MenuItem>
+              <MenuItem value={9}>Nine</MenuItem>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={11}>Jack</MenuItem>
+              <MenuItem value={12}>Queen</MenuItem>
+              <MenuItem value={13}>King</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl className={classes.formControl}>
+            <InputLabel>Suit</InputLabel>
+            <Select
+              value={'age'}
+              onChange={() => alert('hey')}
+              className={classes.NumberSelect}
+            >
+              <MenuItem value={1}>Hearts</MenuItem>
+              <MenuItem value={2}>Diamonds</MenuItem>
+              <MenuItem value={3}>Clubs</MenuItem>
+              <MenuItem value={3}>Spades</MenuItem>
+            </Select>
+          </FormControl>
+          
+          <br></br>
+          
+          <button onClick={nextCard}>Submit</button>
         </div>
         
       </div>
