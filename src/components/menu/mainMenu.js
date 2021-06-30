@@ -2,10 +2,7 @@ import {
     makeStyles,
     MenuList, 
     MenuItem,
-    TextField,
-    IconButton
 } from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { React } from 'react';
 
 const useStyles = makeStyles({
@@ -23,10 +20,6 @@ const useStyles = makeStyles({
         color: '#000000',
         fontFamily: 'Georgia, serif',
     },
-    SearchLabel: {
-        color: '#000000',
-        fontFamily: 'Georgia, serif',
-    }
 });
 
 export default function MainMenu(props){
@@ -36,36 +29,22 @@ export default function MainMenu(props){
 
     return (
         <MenuList className={classes.AppHeader}>
-            <MenuItem onClick={() => props.choose(0) }>
-                <h3 className={classes.HeaderLabel}>New Arrivals</h3>
+            <MenuItem onClick={() => props.newGame }>
+                <h3 className={classes.HeaderLabel}>New Game</h3>
+            </MenuItem>
+
+            <MenuItem onClick={() => props.mode(1)}>
+                <h3 className={classes.HeaderLabel}>Memorization Mode</h3>
+            </MenuItem>
+
+            <MenuItem onClick={() => props.mode(2)}>
+                <h3 className={classes.HeaderLabel}>Test Mode</h3>
             </MenuItem>
 
             <MenuItem onClick={() => props.choose(1) }>
-                <h3 className={classes.HeaderLabel}>Women</h3>
+                <h3 className={classes.HeaderLabel}>History</h3>
             </MenuItem>
 
-            <MenuItem onClick={() => props.choose(2) }>
-                <h3 className={classes.HeaderLabel}>Men</h3>
-            </MenuItem>
-
-            <MenuItem>
-            <TextField 
-                id="outlined-search" 
-                label="Search" 
-                type="search" 
-                className={classes.SearchLabel}
-                />
-            </MenuItem>
-
-            <MenuItem>
-                <IconButton 
-                    backgroundColor="#282c34" 
-                    aria-label="add to shopping cart"
-                    onClick={()=>{alert("hey")}}>
-                    <AddShoppingCartIcon />
-                </IconButton>
-            </MenuItem>
-            
         </MenuList>
     );
 }

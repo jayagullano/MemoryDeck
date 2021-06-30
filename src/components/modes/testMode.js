@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }));
 
-function MemorizationMode(props) {
+function TestMode(props) {
 
   let classes = useStyles();
   
@@ -43,7 +43,7 @@ function MemorizationMode(props) {
 
   return (
     <div className={classes.App}>
-      'Memorization Mode' {/*Temporary Display*/}
+      'Test Mode' {/*Temporary Display*/}
       <div className={classes.AppHeader}>
         <h2>{'Card : ' + (index+1)}</h2>
         <div>
@@ -53,8 +53,8 @@ function MemorizationMode(props) {
         <br></br>
 
         <div>
-          <button onClick={nextCard} padding='5px'>Next Card</button>
-          <button onClick={restart}>Restart</button>
+            <button onClick={nextCard} padding='5px'>Next Card</button>
+            <button onClick={restart}>Restart</button>
         </div>
         
       </div>
@@ -62,4 +62,4 @@ function MemorizationMode(props) {
   );
 }
 
-export default MemorizationMode;
+export default TestMode;
