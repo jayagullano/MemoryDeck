@@ -87,6 +87,7 @@ function MemorizationMode(props) {
                 <Card image={'/cardImages/Red_back.jpg'} /> :
                 <Card suit={card[0]} number={card[1]} image={card[2]}/>
                 }
+                <br/><br/>
               </div>
               {/****************************************************/}
           </Grid>
