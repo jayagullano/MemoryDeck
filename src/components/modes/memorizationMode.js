@@ -64,13 +64,13 @@ function MemorizationMode(props) {
 
       <Grid
         container
-        direction="row"
+        flexDirection="row"
         justify="center"
         alignItems="center"
       >
 
           {/* Timer component to display the current time remaining */}
-          <Grid item xs>
+          <Grid item xs={8}>
 
               {/****************************************************/}
               <Timer />
@@ -79,7 +79,7 @@ function MemorizationMode(props) {
           </Grid>
 
           {/* Card Display for the card images*/}
-          <Grid item xs={4}>
+          <Grid item xs={3}>
               {/****************************************************/}
               <div textAlign='center' alignItems='center'>
                 <h2>{'Card : ' + (index+1)}</h2>
