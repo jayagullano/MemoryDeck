@@ -73,7 +73,7 @@ function MemorizationMode(props) {
           <Grid item xs={8}>
 
               {/****************************************************/}
-              <Timer limit={props.limit}/>
+              <Timer limit={props.limit} startTestMode={props.startTestMode}/>
               {/****************************************************/}
 
           </Grid>
@@ -85,7 +85,7 @@ function MemorizationMode(props) {
                 <Typography variant='h4'>{'Card : ' + (index+1)}</Typography>
                 <br/>
                 {hide.willHide ? 
-                <Card image={'/cardImages/Red_back.jpg'} /> :
+                <Card image={'/cardImages/Gray_back.jpg'} /> :
                 <Card suit={card[0]} number={card[1]} image={card[2]}/>
                 }
                 <br/><br/>

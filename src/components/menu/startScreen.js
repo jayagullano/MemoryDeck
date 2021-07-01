@@ -69,7 +69,7 @@ function StartScreen(props) {
                     color="secondary" 
                     onClick={() => props.choice(3)}
                     className={classes.Button}>
-                    <Typography variant='button'>3 Minute</Typography>
+                    <Typography variant='button'>3 Minutes</Typography>
                   </Button>
                   <br></br>
                   <br></br>
@@ -78,7 +78,7 @@ function StartScreen(props) {
                     color="secondary" 
                     onClick={() => props.choice(4)}
                     className={classes.Button}>
-                    <Typography variant='button'>10 Minute</Typography>
+                    <Typography variant='button'>10 Minutes</Typography>
                   </Button>
                 </div>
                 

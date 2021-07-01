@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-/* This state is being */
 class Timer extends React.Component {
   constructor(props) {
     super(props);
@@ -44,6 +43,9 @@ class Timer extends React.Component {
     //Clears the timer when the decrement hits 0
     if(!this.state.unlimited && this.state.counter <= 0){
       clearInterval(this.timerID);
+
+      //Start test mode
+      this.props.startTestMode();
     }
 
   }
