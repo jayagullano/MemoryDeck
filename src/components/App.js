@@ -1,6 +1,7 @@
 import React from 'react';
 import * as generator from './deckGenerator/deckGeneratorFunction';
 import MemorizationMode from './modes/memorizationMode';
+import '@fontsource/roboto';
 
 
 //Deck generated from deckGenerator

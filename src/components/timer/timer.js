@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
 /* This state is being */
 class Timer extends React.Component {
@@ -30,7 +31,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
-        <h3>{this.state.counter} seconds</h3>
+        <Typography variant='h4'>{this.state.counter} seconds</Typography>
       </div>
     );
   }

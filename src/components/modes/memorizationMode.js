@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles, Button, Grid } from '@material-ui/core';
+import { makeStyles, Button, Grid, Typography } from '@material-ui/core';
 import Card from '../card/playingCard';
 import Timer from '../timer/timer';
 
@@ -82,7 +82,8 @@ function MemorizationMode(props) {
           <Grid item xs={3}>
               {/****************************************************/}
               <div textAlign='center' alignItems='center'>
-                <h2>{'Card : ' + (index+1)}</h2>
+                <Typography variant='h4'>{'Card : ' + (index+1)}</Typography>
+                <br/>
                 {hide.willHide ? 
                 <Card image={'/cardImages/Red_back.jpg'} /> :
                 <Card suit={card[0]} number={card[1]} image={card[2]}/>
@@ -103,7 +104,7 @@ function MemorizationMode(props) {
                   color="secondary" 
                   onClick={nextCard}
                   className={classes.Button}>
-                  Next Card
+                  <Typography variant='button'>Next Card</Typography>
                 </Button>
                 <br></br>
                 <br></br>
@@ -112,7 +113,7 @@ function MemorizationMode(props) {
                   color="secondary" 
                   onClick={restart}
                   className={classes.Button}>
-                  Restart
+                  <Typography variant='button'>Restart</Typography>
                 </Button>
                 <br></br>
                 <br></br>
@@ -121,7 +122,7 @@ function MemorizationMode(props) {
                   color="secondary" 
                   onClick={hideCards}
                   className={classes.Button}>
-                  {hide.value}
+                  <Typography variant='button'>{hide.value}</Typography>
                 </Button>
               </div>
               {/****************************************************/}
