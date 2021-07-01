@@ -73,7 +73,7 @@ function MemorizationMode(props) {
           <Grid item xs={8}>
 
               {/****************************************************/}
-              <Timer />
+              <Timer limit={props.limit}/>
               {/****************************************************/}
 
           </Grid>

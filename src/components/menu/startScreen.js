@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles, Typography, Grid, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,10 @@ function StartScreen(props) {
         >
             <Grid item xs={5}>
               <Typography variant='h2'>Memory Deck</Typography>
-              <p>Choose a time limit, and memorize <br/>the deck in a random order.</p>
+              <br></br>
+              <p>Choose a time limit and memorize <br/>the deck in a random order.
+                 When <br/>the time is up, test mode begins.
+              </p>
               
             </Grid>
 
@@ -46,6 +49,7 @@ function StartScreen(props) {
                   <Button 
                     variant="contained" 
                     color="secondary" 
+                    onClick={() => props.choice(1)}
                     className={classes.Button}>
                     <Typography variant='button'>Unlimited</Typography>
                   </Button>
@@ -54,6 +58,7 @@ function StartScreen(props) {
                   <Button 
                     variant="contained" 
                     color="secondary" 
+                    onClick={() => props.choice(2)}
                     className={classes.Button}>
                     <Typography variant='button'>1 Minute</Typography>
                   </Button>
@@ -62,6 +67,7 @@ function StartScreen(props) {
                   <Button 
                     variant="contained" 
                     color="secondary" 
+                    onClick={() => props.choice(3)}
                     className={classes.Button}>
                     <Typography variant='button'>3 Minute</Typography>
                   </Button>
@@ -70,6 +76,7 @@ function StartScreen(props) {
                   <Button 
                     variant="contained" 
                     color="secondary" 
+                    onClick={() => props.choice(4)}
                     className={classes.Button}>
                     <Typography variant='button'>10 Minute</Typography>
                   </Button>
