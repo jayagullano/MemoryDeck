@@ -73,6 +73,8 @@ class App extends React.Component {
 
     return (
       <div>
+        {/* Temporary Test Mode */}
+        <TestMode />
         {/* Evaluates if mode is undefined, otherwise display mode */}
         {!mode ? <StartScreen choice={this.handleChoice}/> : ''}
         {mode}

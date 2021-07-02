@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import { makeStyles, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
-import Card from '../card/playingCard';
+import { makeStyles, Grid } from '@material-ui/core';
+import TestCard from '../card/testCard';
 
 const useStyles = makeStyles((theme) => ({
     App: {
         textAlign: 'center'
     },
     AppHeader: {
-        backgroundImage: 'url(/cardImages/Tabletop.png)',
-        backgroundSize: '100% 100%',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: `calc(10px + 2vmin)`,
-        color: 'white',
-      },
+      backgroundColor: '#282c29',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: `calc(10px + 2vmin)`,
+      color: 'white',
+    },
       NumberSelect: {
         background: '#0000',
       }
@@ -25,13 +24,68 @@ const useStyles = makeStyles((theme) => ({
 function TestMode(props) {
 
   let classes = useStyles();
+
   
   return (
     <div className={classes.App}>
-      'Test Mode' {/*Temporary Display*/}
       <div className={classes.AppHeader}>
-        
-        It's Test Mode
+
+        {/* Column */}
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          
+          {/* Rows */}
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs>
+              <TestCard image={'/cardImages/2C.jpg'} />
+            </Grid>
+            
+          </Grid>
+          <br/>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+
+            <Grid item xs>
+              <TestCard image={'/cardImages/2C.jpg'} />
+            </Grid>
+
+          </Grid>
+          <br/>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs>
+              <TestCard image={'/cardImages/2C.jpg'} />
+            </Grid>
+          </Grid>
+          <br/>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs>
+              <TestCard image={'/cardImages/2C.jpg'} />
+            </Grid>
+          </Grid>
+        </Grid>
 
       </div>
     </div>
