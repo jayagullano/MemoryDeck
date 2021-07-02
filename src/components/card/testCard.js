@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     CardMedia,
+    CardActionArea,
     makeStyles,
 } from '@material-ui/core';
 
@@ -20,14 +21,24 @@ function TestCard(props){
 
     let classes = useStyles();
 
+    //Sets the state of the image
+    let [image, setImage] = useState(props.image);
+
+    function turnOverCard(){
+        setImage('/cardImages/Gray_back.jpg');
+        props.checkCard(props.suit, props.number);
+    }
+
     return (
         <div>
             <Card className={classes.Card} >
-                <CardMedia
-                    className={classes.media}
-                    component="img"
-                    image={props.image}
-                />
+                <CardActionArea onClick={turnOverCard}>
+                    <CardMedia
+                        className={classes.media}
+                        component="img"
+                        image={image}
+                    />
+                </CardActionArea>
             </Card>
         </div>
     );

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles, Grid } from '@material-ui/core';
 import TestCard from '../card/testCard';
+import { getTemplateDeck } from '../deckGenerator/deckGeneratorFunction';
+
+//Retrieve template deck from deckGenerator
+let templateDeck = getTemplateDeck();
 
 const useStyles = makeStyles((theme) => ({
     App: {
@@ -25,6 +29,46 @@ function TestMode(props) {
 
   let classes = useStyles();
 
+  let [index, setIndex] = useState(0);
+
+  /* Checks if the current card selected is the correct card in order */
+  function checkCard(suit, number){
+
+    let currentCard = props.deck[index];
+
+    if(suit === currentCard[0] && number === currentCard[1]){
+      setIndex(index+1);
+    } else {
+
+      //Invoke parent gameOver method
+      props.gameOver();
+    }
+  }
+
+  //Format the display to iterate by suit
+  let hearts = templateDeck[0].map(card => {
+    return(<Grid item xs>
+      <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
+    </Grid>);
+  });
+
+  let diamonds = templateDeck[1].map(card => {
+    return(<Grid item xs>
+      <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
+    </Grid>);
+  });
+
+  let spades = templateDeck[2].map(card => {
+    return(<Grid item xs>
+      <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
+    </Grid>);
+  });
+
+  let clubs = templateDeck[3].map(card => {
+    return(<Grid item xs>
+      <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
+    </Grid>);
+  });
   
   return (
     <div className={classes.App}>
@@ -45,9 +89,7 @@ function TestMode(props) {
             justify="center"
             alignItems="center"
           >
-            <Grid item xs>
-              <TestCard image={'/cardImages/2C.jpg'} />
-            </Grid>
+            {hearts}
             
           </Grid>
           <br/>
@@ -58,9 +100,7 @@ function TestMode(props) {
             alignItems="center"
           >
 
-            <Grid item xs>
-              <TestCard image={'/cardImages/2C.jpg'} />
-            </Grid>
+            {diamonds}
 
           </Grid>
           <br/>
@@ -70,9 +110,7 @@ function TestMode(props) {
             justify="center"
             alignItems="center"
           >
-            <Grid item xs>
-              <TestCard image={'/cardImages/2C.jpg'} />
-            </Grid>
+             {spades}
           </Grid>
           <br/>
           <Grid
@@ -81,9 +119,7 @@ function TestMode(props) {
             justify="center"
             alignItems="center"
           >
-            <Grid item xs>
-              <TestCard image={'/cardImages/2C.jpg'} />
-            </Grid>
+             {clubs}
           </Grid>
         </Grid>
 

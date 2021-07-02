@@ -12,37 +12,49 @@ let deck = generator.generate();
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {choice: 0, testMode: false}; //Default State
+    this.state = {choice: 0, testMode: false, gameOver: false}; //Default State
 
     this.handleChoice = this.handleChoice.bind(this);
     this.startTestMode = this.startTestMode.bind(this);
+    this.gameOver = this.gameOver.bind(this);
   }
 
   handleChoice(e){
     switch(e){
       case 1: 
-        this.setState({choice: 1, testMode: false}); break;
+        this.setState({choice: 1, testMode: false, gameOver: false}); break;
       case 2: 
-        this.setState({choice: 2, testMode: false}); break;
+        this.setState({choice: 2, testMode: false, gameOver: false}); break;
       case 3: 
-        this.setState({choice: 3, testMode: false}); break;
+        this.setState({choice: 3, testMode: false, gameOver: false}); break;
       case 4: 
-        this.setState({choice: 4, testMode: false}); break;
+        this.setState({choice: 4, testMode: false, gameOver: false}); break;
       default: break;
     }
   }
 
   startTestMode(){
-    this.setState({choice: this.state.choice, testMode: true});
+    this.setState({choice: this.state.choice, testMode: true, gameOver: false});
+  }
+
+  gameOver(){
+    this.setState({choice: this.state.choice, testMode: true, gameOver: true});
   }
 
   render(){
 
     let mode = undefined;
 
-    //Memorization Mode when testMode = false
-    if(!this.state.testMode){
+    //Only if gameOver is set to true
+    if(this.state.gameOver){
+      mode = <h1>Game Over</h1>
 
+    //Test mode when testMode = true
+    } else if (this.state.testMode){
+      mode = <TestMode deck={deck} gameOver={this.gameOver}/>
+
+    //Memorization Mode when testMode = false
+    } else {
       //Sets the parameters for the limit by seconds
       if(this.state.choice === 1){
         mode = <MemorizationMode 
@@ -65,16 +77,10 @@ class App extends React.Component {
                     limit={600} 
                     startTestMode={this.startTestMode}/>  //10 Minutes
       } 
-
-    //Test mode when testMode = true
-    } else if(this.state.testMode) {
-       mode = <TestMode deck={deck} />
     }
-
+    
     return (
       <div>
-        {/* Temporary Test Mode */}
-        <TestMode />
         {/* Evaluates if mode is undefined, otherwise display mode */}
         {!mode ? <StartScreen choice={this.handleChoice}/> : ''}
         {mode}
