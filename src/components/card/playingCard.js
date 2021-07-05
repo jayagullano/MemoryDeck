@@ -20,8 +20,6 @@ function PlayingCard(props){
 
     let classes = useStyles();
 
-    console.log(props.image === null);
-
     return (
         
         <div>
