@@ -3,32 +3,31 @@ import * as generator from './deckGenerator/deckGeneratorFunction';
 import MemorizationMode from './modes/memorizationMode';
 import TestMode from './modes/testMode';
 import StartScreen from './menu/startScreen';
+import EndScreen from './menu/endScreen';
 import '@fontsource/roboto';
 
-
-//Deck generated from deckGenerator
-let deck = generator.generate();
 
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {choice: 0, testMode: false, gameOver: false}; //Default State
+    this.state = {deck: generator.generate(), choice: 0, testMode: false, gameOver: false}; //Default State
 
     this.handleChoice = this.handleChoice.bind(this);
     this.startTestMode = this.startTestMode.bind(this);
     this.gameOver = this.gameOver.bind(this);
+    this.tryAgain = this.tryAgain.bind(this);
   }
 
   handleChoice(e){
     switch(e){
       case 1: 
-        this.setState({choice: 1, testMode: false, gameOver: false}); break;
+        this.setState({...this.state, choice: 1}); break;
       case 2: 
-        this.setState({choice: 2, testMode: false, gameOver: false}); break;
+        this.setState({...this.state, choice: 2}); break;
       case 3: 
-        this.setState({choice: 3, testMode: false, gameOver: false}); break;
+        this.setState({...this.state, choice: 3}); break;
       case 4: 
-        this.setState({choice: 4, testMode: false, gameOver: false}); break;
+        this.setState({...this.state, choice: 4}); break;
       default: break;
     }
   }
@@ -41,49 +40,71 @@ class App extends React.Component {
     this.setState({choice: this.state.choice, testMode: true, gameOver: true});
   }
 
+  tryAgain(){
+    //Set state to default state and generate new deck
+    this.setState({deck: generator.generate(), choice: 0, testMode: false, gameOver: false});
+  }
+
   render(){
 
     let mode = undefined;
 
-    //Only if gameOver is set to true
+    /********************************************
+     * 
+     *  Game Over Mode
+     * 
+     ********************************************/
     if(this.state.gameOver){
-      mode = <h1>Game Over</h1>
+      mode = <EndScreen tryAgain={this.tryAgain}/>
 
-    //Test mode when testMode = true
+    /********************************************
+     * 
+     * Test Mode (after game intervals reach 0)
+     * 
+     ********************************************/
     } else if (this.state.testMode){
-      mode = <TestMode deck={deck} gameOver={this.gameOver}/>
+      mode = <TestMode deck={this.state.deck} gameOver={this.gameOver}/>
 
+    /********************************************
+     * 
+     * Main Memorization Mode
+     * 
+     ********************************************/
     //Memorization Mode when testMode = false
     } else {
       //Sets the parameters for the limit by seconds
       if(this.state.choice === 1){
         mode = <MemorizationMode 
-                    deck={deck} 
+                    deck={this.state.deck} 
                     limit={0} 
                     startTestMode={this.startTestMode}/>    //Unlimited
       } else if (this.state.choice === 2){
         mode = <MemorizationMode 
-                    deck={deck} 
+                    deck={this.state.deck} 
                     limit={60} 
                     startTestMode={this.startTestMode}/>   //1 Minute
       } else if (this.state.choice === 3){
         mode = <MemorizationMode 
-                    deck={deck} 
+                    deck={this.state.deck} 
                     limit={180} 
                     startTestMode={this.startTestMode}/>  //3 Minutes
       } else if (this.state.choice === 4){
         mode = <MemorizationMode 
-                    deck={deck} 
+                    deck={this.state.deck} 
                     limit={600} 
                     startTestMode={this.startTestMode}/>  //10 Minutes
       } 
     }
     
+    /********************************************
+     * 
+     * JSX Return Area
+     * 
+     ********************************************/
     return (
       <div>
         {/* Evaluates if mode is undefined, otherwise display mode */}
-        {!mode ? <StartScreen choice={this.handleChoice}/> : ''}
-        {mode}
+        {!mode ? <StartScreen choice={this.handleChoice}/> : mode}
       </div>
     );
   }
