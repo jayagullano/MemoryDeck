@@ -10,7 +10,7 @@ import '@fontsource/roboto';
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = {deck: generator.generate(), choice: 0, testMode: false, gameOver: false}; //Default State
+    this.state = {deck: generator.generate(), choice: 0, testMode: false, gameOver: false, score: 0}; //Default State
 
     this.handleChoice = this.handleChoice.bind(this);
     this.startTestMode = this.startTestMode.bind(this);
@@ -33,11 +33,11 @@ class App extends React.Component {
   }
 
   startTestMode(){
-    this.setState({choice: this.state.choice, testMode: true, gameOver: false});
+    this.setState({...this.state, testMode: true});
   }
 
-  gameOver(){
-    this.setState({choice: this.state.choice, testMode: true, gameOver: true});
+  gameOver(userScore){
+    this.setState({...this.state, gameOver: true, score: userScore});
   }
 
   tryAgain(){
@@ -55,7 +55,7 @@ class App extends React.Component {
      * 
      ********************************************/
     if(this.state.gameOver){
-      mode = <EndScreen tryAgain={this.tryAgain}/>
+      mode = <EndScreen tryAgain={this.tryAgain} score={this.state.score}/>
 
     /********************************************
      * 

@@ -35,9 +35,9 @@ function EndScreen(props) {
           alignItems="center"
         >
             <Grid item xs={5}>
-              <Typography variant='h2'>Game Over</Typography>
+              <Typography variant='h2'>Test Mode Completed</Typography>
               <br></br>
-              <p>Highest Card Memorized: 
+              <p>Highest Card Memorized: {props.score}
               </p>
               
             </Grid>

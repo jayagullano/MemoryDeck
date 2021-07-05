@@ -41,7 +41,7 @@ function TestMode(props) {
     } else {
 
       //Invoke parent gameOver method
-      props.gameOver();
+      props.gameOver(index);
     }
   }
 
