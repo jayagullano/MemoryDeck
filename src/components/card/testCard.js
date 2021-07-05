@@ -23,10 +23,17 @@ function TestCard(props){
 
     //Sets the state of the image
     let [image, setImage] = useState(props.image);
+    let [flipped, setFlipped] = useState(false);
 
     function turnOverCard(){
-        setImage('/cardImages/Gray_back.jpg');
-        props.checkCard(props.suit, props.number);
+
+        //If card is flipped, don't check card
+        if(!flipped){
+            setImage('/cardImages/Gray_back.jpg');
+            props.checkCard(props.suit, props.number);
+            setFlipped(true);
+        }
+        
     }
 
     return (
