@@ -64,7 +64,6 @@ function MemorizationMode(props) {
 
       <Grid
         container
-        flexDirection="row"
         justify="center"
         alignItems="center"
       >
@@ -81,7 +80,7 @@ function MemorizationMode(props) {
           {/* Card Display for the card images*/}
           <Grid item xs={3}>
               {/****************************************************/}
-              <div textAlign='center' alignItems='center'>
+              <div  >
                 <Typography variant='h4'>{'Card : ' + (index+1)}</Typography>
                 <br/>
                 {hide.willHide ? 

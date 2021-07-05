@@ -30,7 +30,6 @@ function StartScreen(props) {
 
         <Grid
           container
-          flexDirection="row"
           justify="center"
           alignItems="center"
         >

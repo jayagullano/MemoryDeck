@@ -47,25 +47,25 @@ function TestMode(props) {
 
   //Format the display to iterate by suit
   let hearts = templateDeck[0].map(card => {
-    return(<Grid item xs>
+    return(<Grid item xs key={card.toString()}>
       <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
     </Grid>);
   });
 
   let diamonds = templateDeck[1].map(card => {
-    return(<Grid item xs>
+    return(<Grid item xs key={card.toString()}>
       <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
     </Grid>);
   });
 
   let spades = templateDeck[2].map(card => {
-    return(<Grid item xs>
+    return(<Grid item xs> key={card.toString()}
       <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
     </Grid>);
   });
 
   let clubs = templateDeck[3].map(card => {
-    return(<Grid item xs>
+    return(<Grid item xs key={card.toString()}>
       <TestCard suit={card[0]} number={card[1]} image={card[2]} checkCard={checkCard}/>
     </Grid>);
   });
