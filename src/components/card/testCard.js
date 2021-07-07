@@ -17,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+/**
+ * TestCard functional component houses the display for each
+ * card in TestMode component.
+ * @param {*} props 
+ * @returns 
+ */
 function TestCard(props){
 
     let classes = useStyles();

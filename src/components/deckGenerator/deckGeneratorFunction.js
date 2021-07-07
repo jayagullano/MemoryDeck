@@ -76,7 +76,7 @@ function getTemplateDeck(){
     return Array.from(deck); 
 }
 
-//Randomizes 
+//Randomizes the deck, and returning it.
 function generate(){
 
     //Convert the deck to flat to return a single array of random cards,

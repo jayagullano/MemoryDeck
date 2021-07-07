@@ -1,6 +1,10 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
+/**
+ * Timer class component algorithm taken from own JS library, allowing the 
+ * display of the timer.
+ */
 class Timer extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +17,7 @@ class Timer extends React.Component {
     
   }
 
-  //When the component laods, you set the interval using the tick() method.
+  //When the component loads, you set the interval using the tick() method.
   //The tick method sets the state of the date property to a new Date()
   componentDidMount() {
     this.timerID = setInterval(

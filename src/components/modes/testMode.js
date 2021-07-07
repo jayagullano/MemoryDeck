@@ -25,6 +25,13 @@ const useStyles = makeStyles((theme) => ({
       }
 }));
 
+/**
+ * TestMode functional component deals with the testing phase,
+ * invoking the testCard component that when clicked determines if it
+ * is the correct card in sequence from MemorizationMode.
+ * @param {*} props 
+ * @returns 
+ */
 function TestMode(props) {
 
   let classes = useStyles();

@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+/**
+ * StartScreen functional component displays
+ * the initial screen to prompt the user for the time
+ * interval desired.
+ * @param {*} props 
+ * @returns 
+ */
 function StartScreen(props) {
 
   const classes = useStyles();
@@ -42,9 +49,12 @@ function StartScreen(props) {
               
             </Grid>
 
+            {/* Time interval display */}
             <Grid item xs={4}>
 
               <div>
+
+                  {/* Unlimited Time Interval Mode */}
                   <Button 
                     variant="contained" 
                     color="secondary" 
@@ -54,6 +64,8 @@ function StartScreen(props) {
                   </Button>
                   <br></br>
                   <br></br>
+
+                  {/* One Minute Time Interval Mode */}
                   <Button 
                     variant="contained" 
                     color="secondary" 
@@ -63,6 +75,8 @@ function StartScreen(props) {
                   </Button>
                   <br></br>
                   <br></br>
+
+                  {/* Three Minutes Time Interval Mode */}
                   <Button 
                     variant="contained" 
                     color="secondary" 
@@ -72,6 +86,8 @@ function StartScreen(props) {
                   </Button>
                   <br></br>
                   <br></br>
+
+                  {/* Ten Minutes Time Interval Mode */}
                   <Button 
                     variant="contained" 
                     color="secondary" 

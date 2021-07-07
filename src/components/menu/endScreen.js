@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+/**
+ * EndScreen functional component displays the final end screen,
+ * displaying the highest card memorized as well as a button
+ * to play again from the StartScreen.
+ * @param {*} props 
+ * @returns 
+ */
 function EndScreen(props) {
 
   const classes = useStyles();
@@ -28,6 +35,7 @@ function EndScreen(props) {
     <div className={classes.App}>
       <div className={classes.AppHeader}>
 
+        {/* Grid Container */}
         <Grid
           container
           justify="center"

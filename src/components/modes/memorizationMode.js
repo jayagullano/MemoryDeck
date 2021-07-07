@@ -22,10 +22,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+/**
+ * MemorizationMode functional component handles the memorization
+ * after the time interval has been chosen after the StartScreen component.
+ * @param {*} props 
+ * @returns 
+ */
 function MemorizationMode(props) {
 
   let classes = useStyles();
   
+  /* Initial state values */
   let [index, setIndex] = useState(0);
   let [card, setCard] = useState(props.deck[index]);
   let [hide, setHide] = useState({willHide: false, value: 'Hide'});

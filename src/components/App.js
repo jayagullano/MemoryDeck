@@ -6,7 +6,9 @@ import StartScreen from './menu/startScreen';
 import EndScreen from './menu/endScreen';
 import '@fontsource/roboto';
 
-
+/**
+ * Main component for the application, controlling the overall state.
+ */
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -18,6 +20,8 @@ class App extends React.Component {
     this.tryAgain = this.tryAgain.bind(this);
   }
 
+  /* Handles choice for the time intervals from the StartScreen
+     component.  */
   handleChoice(e){
     switch(e){
       case 1: 
@@ -32,14 +36,23 @@ class App extends React.Component {
     }
   }
 
+  /* Deals with setting the state of the test mode */
   startTestMode(){
     this.setState({...this.state, testMode: true});
   }
 
+  /**
+   * Sets the state to gameover and accepts the highest score
+   * from the TestMode component.
+   * @param {*} userScore 
+   */
   gameOver(userScore){
     this.setState({...this.state, gameOver: true, score: userScore});
   }
 
+  /**
+   * Reinitializes the state to a new instance of the game.
+   */
   tryAgain(){
     //Set state to default state and generate new deck
     this.setState({deck: generator.generate(), choice: 0, testMode: false, gameOver: false});

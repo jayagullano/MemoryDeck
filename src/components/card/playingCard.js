@@ -16,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+/**
+ * PlayingCard functional component houses the playing card
+ * display, invoked primarily by MemorizationMode component.
+ * @param {*} props 
+ * @returns 
+ */
 function PlayingCard(props){
 
     let classes = useStyles();
