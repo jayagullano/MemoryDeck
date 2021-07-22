@@ -11,8 +11,24 @@ possibly be translatable to a different kind of image (trying to memorize number
 Demo: 
 
 <br>
-<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/Screenrecording.gif"/>
+<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Screenrecording.gif"/>
 <br>
 
 Design:
+
+<br>
+<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<br>
+
+<br>
+<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<br>
+
+<br>
+<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<br>
+
+<br>
+<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<br>
 
