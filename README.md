@@ -17,18 +17,18 @@ Demo:
 Design:
 
 <br>
-<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<img height = "300" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
 <br>
 
 <br>
-<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<img height = "300" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image2.PNG"/>
 <br>
 
 <br>
-<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<img height = "300" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image3.PNG"/>
 <br>
 
 <br>
-<img height = "400" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image1.PNG"/>
+<img height = "300" src = "https://github.com/jayagullano/MemoryDeck/blob/main/gitFiles/Image4.PNG"/>
 <br>
 
